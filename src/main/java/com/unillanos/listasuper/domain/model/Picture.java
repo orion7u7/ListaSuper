@@ -11,5 +11,5 @@ import lombok.NoArgsConstructor;
 public class Picture {
     private String name;
     private String description;
-    private  byte[] picture;
+    private String path;
 }

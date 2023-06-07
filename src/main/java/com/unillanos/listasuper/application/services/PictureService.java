@@ -12,6 +12,12 @@ public class PictureService implements IPictureService {
 
     private final CreatePictureUseCase createPictureUseCase;
 
+
     @Override
-    public Picture createPicture(Picture picture) {return createPictureUseCase.run(picture);}
+    public Picture createPicture(Picture picture) {
+        return createPictureUseCase.run(picture);
+    }
+
+
+
 }

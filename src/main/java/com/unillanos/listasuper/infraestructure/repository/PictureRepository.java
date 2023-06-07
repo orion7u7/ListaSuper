@@ -20,4 +20,7 @@ public class PictureRepository implements IPictureRepository {
         picture = GenericMapper.map(pictureEntity, Picture.class);
         return picture;
     }
+
+
+
 }

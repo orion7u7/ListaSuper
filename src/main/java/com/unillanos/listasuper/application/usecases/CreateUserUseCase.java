@@ -12,7 +12,7 @@ public class CreateUserUseCase {
     private IUserRepository userRepository;
 
 
-    public User run(User user){
+    public User run(User user) {
         return userRepository.save(user);
     }
 }

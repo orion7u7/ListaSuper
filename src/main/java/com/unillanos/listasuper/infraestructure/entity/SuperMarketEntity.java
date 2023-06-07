@@ -24,7 +24,7 @@ public class SuperMarketEntity {
     @Column(name = "schedule_market")
     private String schedule;
 
-    @ManyToOne
+    @OneToOne
     @JoinColumn(name="id_picture",referencedColumnName = "id_picture",nullable = false)
     private PictureEntity picture;
 

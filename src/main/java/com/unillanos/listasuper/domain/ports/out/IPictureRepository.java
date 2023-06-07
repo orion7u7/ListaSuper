@@ -7,4 +7,6 @@ import org.springframework.stereotype.Repository;
 public interface IPictureRepository {
 
     Picture save(Picture picture);
+
+
 }

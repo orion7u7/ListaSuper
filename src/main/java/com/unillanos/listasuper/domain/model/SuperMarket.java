@@ -9,14 +9,12 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class SuperMarket {
-    private int id;
     private String name;
     private String description;
     private String schedule;
-    private PictureEntity picture;
     private String phone;
     private String facebook;
     private String instagram;
     private String webpage;
-
+    private PictureEntity picture;
 }

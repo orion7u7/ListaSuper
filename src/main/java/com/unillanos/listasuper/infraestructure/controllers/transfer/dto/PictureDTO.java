@@ -4,7 +4,8 @@ import lombok.Data;
 
 @Data
 public class PictureDTO {
+    private int id;
     private String name;
     private String description;
-    private byte[] picture;
+    private String path;
 }

@@ -2,6 +2,7 @@ package com.unillanos.listasuper.infraestructure.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.Nationalized;
 
 @Entity
 @Setter
@@ -21,6 +22,6 @@ public class PictureEntity {
     @Column(name = "description_picture")
     private String description;
 
-    @Column(name = "picture")
-    private  byte[] picture;
+    @Column(name = "path_picture")
+    private String path;
 }

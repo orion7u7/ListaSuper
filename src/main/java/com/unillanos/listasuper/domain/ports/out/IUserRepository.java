@@ -5,8 +5,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface IUserRepository {
-
     User save(User user);
-
     User login(User user);
 }

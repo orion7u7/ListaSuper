@@ -1,5 +1,7 @@
 package com.unillanos.listasuper.infraestructure.mappers;
 
+import com.unillanos.listasuper.domain.model.Picture;
+import com.unillanos.listasuper.infraestructure.controllers.transfer.dto.PictureDTO;
 import org.modelmapper.ModelMapper;
 
 

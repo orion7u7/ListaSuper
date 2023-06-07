@@ -5,6 +5,5 @@ import org.springframework.stereotype.Service;
 
 @Service
 public interface IPictureService {
-
     Picture createPicture(Picture picture);
 }

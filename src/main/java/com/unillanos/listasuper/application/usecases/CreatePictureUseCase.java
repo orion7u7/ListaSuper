@@ -11,6 +11,7 @@ public class CreatePictureUseCase {
     @Autowired
     private IPictureRepository pictureRepository;
 
-    public Picture run(Picture picture){return pictureRepository.save(picture);
+    public Picture run(Picture picture) {
+        return pictureRepository.save(picture);
     }
 }
