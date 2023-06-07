@@ -16,5 +16,5 @@ public class SuperMarket {
     private String facebook;
     private String instagram;
     private String webpage;
-    private PictureEntity picture;
+    private Picture picture;
 }

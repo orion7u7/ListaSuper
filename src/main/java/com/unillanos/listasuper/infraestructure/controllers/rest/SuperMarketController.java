@@ -37,7 +37,6 @@ public class SuperMarketController {
         PictureDTO picture = new PictureDTO();
         picture.setName(pName);
         picture.setDescription(pDescription);
-
         picture.setPath(imageRepository.uploadFile("picture", file));
 
         superMarket.setPicture(picture);
