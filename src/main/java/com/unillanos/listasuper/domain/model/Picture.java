@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Picture {
+    private int id;
     private String name;
     private String description;
     private String path;

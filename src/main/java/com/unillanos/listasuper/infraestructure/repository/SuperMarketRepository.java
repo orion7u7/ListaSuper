@@ -19,7 +19,6 @@ public class SuperMarketRepository implements ISuperMarketRepository {
         superMarketEntity = jpaSuperMarketRepository.save(superMarketEntity);
         superMarket = GenericMapper.map(superMarketEntity, SuperMarket.class);
         return superMarket;
-
     }
 
 }

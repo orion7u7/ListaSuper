@@ -37,9 +37,8 @@ public class SuperMarketController {
         PictureDTO picture = new PictureDTO();
         picture.setName(pName);
         picture.setDescription(pDescription);
-
         picture.setPath(imageRepository.uploadFile("picture", file));
-
+        pictureService.createPicture(mapper.map(picture, Picture.class));
         superMarket.setPicture(picture);
         superMarket.setPhone(phone);
         superMarket.setFacebook(facebook);
