@@ -1,6 +1,5 @@
 package com.unillanos.listasuper.domain.model;
 
-import com.unillanos.listasuper.infraestructure.entity.PictureEntity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

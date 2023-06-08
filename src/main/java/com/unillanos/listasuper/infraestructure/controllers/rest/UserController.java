@@ -32,11 +32,20 @@ public class UserController {
 
     @PostMapping("/login")
     public ResponseEntity loginUser(@RequestBody UserDTO user) {
-        User userLogged = userService.loginUser(mapper.map(user, User.class));
-        return ResponseEntity.ok(
-                new GenericResponse(userLogged,
-                        UserConstants.USER_LOGGED)
-        );
+        try {
+            User userLogged = userService.loginUser(mapper.map(user, User.class));
+            return ResponseEntity.ok(
+                    new GenericResponse(userLogged,
+                            UserConstants.USER_LOGGED)
+            );
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().body(
+                    new GenericResponse(
+                            null,
+                            e.getMessage()
+                    )
+            );
+        }
     }
 
 
