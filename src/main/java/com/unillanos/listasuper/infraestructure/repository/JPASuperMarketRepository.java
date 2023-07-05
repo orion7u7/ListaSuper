@@ -10,7 +10,7 @@ import java.util.Optional;
 @Repository
 public interface JPASuperMarketRepository extends JpaRepository<SuperMarketEntity, Long> {
 
-    @Query("SELECT s FROM SuperMarketEntity s WHERE s.name = ?1")
+    @Query("SELECT s FROM SuperMarketEntity s WHERE s.name like  CONCAT('%',?1,'%')")
     Optional<SuperMarketEntity> findByName(String name);
 
 

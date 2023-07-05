@@ -41,8 +41,7 @@ public class UserController {
         } catch (Exception e) {
             return ResponseEntity.badRequest().body(
                     new GenericResponse(
-                            null,
-                            e.getMessage()
+                            null,"Usuario o contraseña incorrectos"
                     )
             );
         }

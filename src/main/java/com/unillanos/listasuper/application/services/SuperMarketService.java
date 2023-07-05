@@ -4,7 +4,6 @@ import com.unillanos.listasuper.application.usecases.CreateSuperMarketUseCase;
 import com.unillanos.listasuper.application.usecases.ShowSuperMarketUseCase;
 import com.unillanos.listasuper.domain.model.SuperMarket;
 import com.unillanos.listasuper.domain.ports.in.ISuperMarketService;
-import com.unillanos.listasuper.infraestructure.controllers.transfer.dto.SuperMarketDTO;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -26,7 +25,7 @@ public class SuperMarketService implements ISuperMarketService {
 
     @Override
     public Optional<SuperMarket> findByName(String name) {
-        return Optional.empty();
+        return showSuperMarketUseCase.run(name);
     }
 
 
