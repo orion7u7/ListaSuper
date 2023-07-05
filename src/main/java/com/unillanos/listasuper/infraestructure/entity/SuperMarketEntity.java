@@ -24,9 +24,8 @@ public class SuperMarketEntity {
     @Column(name = "schedule_market")
     private String schedule;
 
-    @OneToOne
-    @JoinColumn(name="id_picture",referencedColumnName = "id_picture",nullable = false)
-    private PictureEntity picture;
+    @Column(name = "picture_market")
+    private String picture;
 
     @Column(name = "phone_market")
     private String phone;

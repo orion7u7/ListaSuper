@@ -7,6 +7,9 @@ import com.unillanos.listasuper.infraestructure.mappers.GenericMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+import java.util.Optional;
+
 @Repository
 public class SuperMarketRepository implements ISuperMarketRepository {
 
@@ -21,4 +24,20 @@ public class SuperMarketRepository implements ISuperMarketRepository {
         return superMarket;
     }
 
+    @Override
+    public Optional<SuperMarket> findByName(String name) {
+        Optional<SuperMarketEntity> superMarketEntity = jpaSuperMarketRepository.findByName(name);
+        if(superMarketEntity.isPresent()){
+            SuperMarket superMarket = GenericMapper.map(superMarketEntity.get(), SuperMarket.class);
+            return Optional.of(superMarket);
+        }
+        return Optional.empty();
+    }
+
+    @Override
+    public List<SuperMarket> findAll() {
+         List<SuperMarketEntity> superMarketEntities = jpaSuperMarketRepository.findAll();
+         List<SuperMarket> superMarkets = GenericMapper.mapList(superMarketEntities, SuperMarket.class);
+         return superMarkets;
+    }
 }

@@ -11,5 +11,5 @@ public class SuperMarketDTO {
     private String facebook;
     private String instagram;
     private String webpage;
-    private PictureDTO picture;
+    private String picture;
 }

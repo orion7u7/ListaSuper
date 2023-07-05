@@ -25,12 +25,13 @@ public class ProductEntity {
     @Column(name = "type_product")
     private String type;
 
-    @ManyToOne
-    @JoinColumn(name="id_market",referencedColumnName = "id_market",nullable = false)
-    private SuperMarketEntity market;
+    @Column(name = "name_market")
+    private String market_name;
 
-    @ManyToOne
-    @JoinColumn(name="id_picture",referencedColumnName = "id_picture",nullable = false)
-    private PictureEntity picture;
+    @Column(name = "picture_product")
+    private String picture;
+
+    @Column(name = "price_product")
+    private int price;
 
 }

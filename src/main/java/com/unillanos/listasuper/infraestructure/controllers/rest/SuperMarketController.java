@@ -1,10 +1,7 @@
 package com.unillanos.listasuper.infraestructure.controllers.rest;
 
-import com.unillanos.listasuper.domain.model.Picture;
 import com.unillanos.listasuper.domain.model.SuperMarket;
-import com.unillanos.listasuper.domain.ports.in.IPictureService;
 import com.unillanos.listasuper.domain.ports.in.ISuperMarketService;
-import com.unillanos.listasuper.infraestructure.controllers.transfer.dto.PictureDTO;
 import com.unillanos.listasuper.infraestructure.controllers.transfer.dto.SuperMarketDTO;
 import com.unillanos.listasuper.infraestructure.controllers.transfer.responses.GenericResponse;
 import com.unillanos.listasuper.infraestructure.mappers.GenericMapper;
@@ -20,26 +17,19 @@ import org.springframework.web.multipart.MultipartFile;
 public class SuperMarketController {
 
     private final ISuperMarketService superMarketService;
-    private final IPictureService pictureService;
     private final ImageRepository imageRepository;
     private final GenericMapper mapper = new GenericMapper();
 
-    @PostMapping
+    @PostMapping("/create")
     public ResponseEntity createUser(@RequestParam String name,@RequestParam String description,@RequestParam String schedule,
                                      @RequestParam String phone,@RequestParam String facebook,@RequestParam String instagram,
-                                     @RequestParam String webpage,@RequestParam String pName,@RequestParam String pDescription,
-                                     @RequestParam("path") MultipartFile file) {
+                                     @RequestParam String webpage, @RequestParam("path") MultipartFile file) {
 
         SuperMarketDTO superMarket = new SuperMarketDTO();
         superMarket.setName(name);
         superMarket.setDescription(description);
         superMarket.setSchedule(schedule);
-        PictureDTO picture = new PictureDTO();
-        picture.setName(pName);
-        picture.setDescription(pDescription);
-        picture.setPath(imageRepository.uploadFile("picture", file));
-        pictureService.createPicture(mapper.map(picture, Picture.class));
-        superMarket.setPicture(picture);
+        superMarket.setPicture(imageRepository.uploadFile("picture", file));
         superMarket.setPhone(phone);
         superMarket.setFacebook(facebook);
         superMarket.setInstagram(instagram);
@@ -48,6 +38,26 @@ public class SuperMarketController {
         return ResponseEntity.ok(
                 new GenericResponse(superMarketCreated,
                         "SuperMarket created")
+        );
+    }
+
+    @GetMapping("/find/{name}")
+    public ResponseEntity findSuperMarket(@PathVariable String name){
+        return ResponseEntity.ok(
+                new GenericResponse(
+                        superMarketService.findByName(name),
+                        "SuperMarket found"
+                )
+        );
+    }
+
+    @GetMapping("/find")
+    public ResponseEntity findAllSuperMarket(){
+        return ResponseEntity.ok(
+                new GenericResponse(
+                        superMarketService.findAll(),
+                        "SuperMarket's found"
+                )
         );
     }
 

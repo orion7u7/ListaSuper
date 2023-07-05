@@ -1,6 +1,5 @@
 package com.unillanos.listasuper.domain.model;
 
-import com.unillanos.listasuper.infraestructure.entity.PictureEntity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -16,5 +15,5 @@ public class SuperMarket {
     private String facebook;
     private String instagram;
     private String webpage;
-    private Picture picture;
+    private String picture;
 }
