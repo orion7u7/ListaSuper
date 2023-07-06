@@ -14,6 +14,10 @@ public class ShowSuperMarketUseCase {
     @Autowired
     private ISuperMarketRepository superMarketRepository;
 
+    public SuperMarket run(int id){
+        return superMarketRepository.findById(id);
+    }
+
     public List<SuperMarket> run(){
         return superMarketRepository.findAll();
     }

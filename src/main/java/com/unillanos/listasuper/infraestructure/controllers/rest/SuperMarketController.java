@@ -61,4 +61,14 @@ public class SuperMarketController {
         );
     }
 
+    @GetMapping("/find/id/{id}")
+    public ResponseEntity findSuperMarketById(@PathVariable int id){
+        return ResponseEntity.ok(
+                new GenericResponse(
+                        superMarketService.findById(id),
+                        "SuperMarket found"
+                )
+        );
+    }
+
 }

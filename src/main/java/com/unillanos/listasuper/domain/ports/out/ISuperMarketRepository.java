@@ -12,6 +12,8 @@ public interface ISuperMarketRepository {
 
     SuperMarket save(SuperMarket superMarket);
 
+    SuperMarket findById(int id);
+
     Optional<SuperMarket> findByName(String name);
 
     List<SuperMarket> findAll();

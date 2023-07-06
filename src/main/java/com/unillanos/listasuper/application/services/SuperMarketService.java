@@ -24,6 +24,11 @@ public class SuperMarketService implements ISuperMarketService {
     }
 
     @Override
+    public SuperMarket findById(int id) {
+        return showSuperMarketUseCase.run(id);
+    }
+
+    @Override
     public Optional<SuperMarket> findByName(String name) {
         return showSuperMarketUseCase.run(name);
     }

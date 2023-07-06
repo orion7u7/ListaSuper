@@ -25,6 +25,13 @@ public class SuperMarketRepository implements ISuperMarketRepository {
     }
 
     @Override
+    public SuperMarket findById(int id) {
+        SuperMarketEntity superMarketEntity = jpaSuperMarketRepository.findById(id);
+        SuperMarket superMarket = GenericMapper.map(superMarketEntity, SuperMarket.class);
+        return superMarket;
+    }
+
+    @Override
     public Optional<SuperMarket> findByName(String name) {
         Optional<SuperMarketEntity> superMarketEntity = jpaSuperMarketRepository.findByName(name);
         if(superMarketEntity.isPresent()){
