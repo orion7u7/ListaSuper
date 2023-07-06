@@ -9,6 +9,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class Location {
     private int id;
-    private String url_Location;
+    private String url;
     private SuperMarket superMarket;
 }
